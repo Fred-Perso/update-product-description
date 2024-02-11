@@ -54,6 +54,23 @@ app.put('/update-product-description', async (req, res) => {
   }
 });
 
+$(document).ready(function() {
+    // Récupérer la description du produit depuis le serveur
+    $.ajax({
+        url: '/product-description', // Endpoint pour récupérer la description du produit
+        method: 'GET',
+        success: function(response) {
+            console.log(response); // Ajoutez cette ligne pour afficher la réponse dans la console du navigateur
+            $('#product-description').html(response.description);
+        },
+        error: function(error) {
+            console.error('Erreur lors de la récupération de la description du produit :', error);
+            $('#product-description').html('Erreur lors de la récupération de la description du produit.');
+        }
+    });
+});
+
+
 // Démarrer le serveur
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur le port ${PORT}`);
