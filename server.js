@@ -20,8 +20,8 @@ app.use(express.json());
 // Endpoint pour récupérer la description du produit depuis WooCommerce
 app.get('/product-description', async (req, res) => {
   try {
-    const productId = 16;
-    const response = await axios.get(`https://tuto-imprimeur.fr/wp-json/wc/v3/products/${productId}`, {
+    const productID = 16;
+    const response = await axios.get(`https://tuto-imprimeur.fr/wp-json/wc/v3/products/${productID}`, {
       auth: {
         username: consumerKey,
         password: consumerSecret
