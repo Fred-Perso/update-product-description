@@ -39,7 +39,9 @@ app.get('/product-description', async (req, res) => {
 app.put('/update-product-description', async (req, res) => {
   try {
     const { id, newDescription } = req.body; // Récupérer l'ID du produit et la nouvelle description depuis la requête
-    const response = await axios.put(`https://https://tuto-imprimeur.fr/wp-json/wc/v3/products/${id}`, { description: newDescription }, {
+    const response = await axios.put(`https://tuto-imprimeur.fr/wp-json/wc/v3/products/${id}`, { description: newDescription }, {
+
+   
       auth: {
         username: consumerKey,
         password: consumerSecret
