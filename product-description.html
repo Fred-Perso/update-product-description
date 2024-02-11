@@ -17,7 +17,7 @@
         $(document).ready(function() {
             // Récupérer la description du produit depuis le serveur
             $.ajax({
-                url: '/api/product-description', // L'URL de l'API pour récupérer la description du produit
+                url: 'https://tuto-imprimeur.fr/wp-json/wc/v3/products/16', // L'URL de l'API pour récupérer la description du produit
                 method: 'GET',
                 success: function(response) {
                     $('#product-description').html(response.description);
